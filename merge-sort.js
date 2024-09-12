@@ -10,17 +10,13 @@ function mergeSort(arr) {
 
 function merge(left, right) {
   let mergedArr = [];
-  let l = 0;
-  let r = 0;
-  while (l < left.length && r < right.length) {
-    if (left[l] <= right[r]) {
-      mergedArr.push(left[l]);
+  while (left.length > 0 && right.length > 0) {
+    if (left[0] <= right[0]) {
+      mergedArr.push(left[0]);
       left.shift();
-      l++;
     } else {
-      mergedArr.push(right[r]);
+      mergedArr.push(right[0]);
       right.shift();
-      r++;
     }
   }
   return [...mergedArr, ...left, ...right];
